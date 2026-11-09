@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env
+.gpt-local-codex-worker/
+.DS_Store
