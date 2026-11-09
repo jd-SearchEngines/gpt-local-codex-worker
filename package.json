@@ -6,14 +6,17 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@11.25.0",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc -b",
     "test": "node --test --import tsx tests/**/*.test.ts",
     "worker": "node --env-file-if-exists=.env --import tsx src/cli.ts worker",
     "worker:once": "node --env-file-if-exists=.env --import tsx src/cli.ts once",
     "worker:status": "node --env-file-if-exists=.env --import tsx src/cli.ts status",
-    "test:e2e": "node --env-file-if-exists=.env --import tsx scripts/test-e2e.ts"
+    "test:e2e": "node --env-file-if-exists=.env --import tsx scripts/test-e2e.ts",
+    "registry:sync": "node --env-file-if-exists=.env --import tsx scripts/sync-project-registry.ts"
   },
   "dependencies": {
     "@octokit/rest": "^22.0.0",
