@@ -143,5 +143,8 @@ function doneComment(commit: string, detail: string): string {
 }
 
 function safe(value: string): string {
-  return value.replace(/(sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_]{12,}|github_pat_[A-Za-z0-9_]{12,})/g, '[REDACTED_TOKEN]').replace(/((?:API_KEY|TOKEN|SECRET|PASSWORD)\s*[=:]\s*)[^\s]+/gi, '$1[REDACTED]');
+  return value
+    .replace(/(sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_]{12,}|github_pat_[A-Za-z0-9_]{12,})/g, '[REDACTED_TOKEN]')
+    .replace(/((?:API_KEY|TOKEN|SECRET|PASSWORD)\s*[=:]\s*)[^\s]+/gi, '$1[REDACTED]')
+    .replace(/\/(?:Users|private\/var|tmp)\/[^\s)`]+/g, '[REDACTED_LOCAL_PATH]');
 }
