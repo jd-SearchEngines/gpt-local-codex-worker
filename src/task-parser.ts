@@ -8,8 +8,8 @@ function requiredString(value: unknown, name: string): string {
 
 function stringList(value: unknown, name: string): string[] {
   if (value === undefined || value === null || value === '') return [];
-  const values = Array.isArray(value) ? value : [value];
-  return values.map((item) => requiredString(item, name));
+  const values = Array.isArray(value) ? value.flat(Infinity) : [value];
+  return values.filter((item) => item !== null && item !== undefined && item !== '').map((item) => requiredString(item, name));
 }
 
 function yamlSource(body: string): string {
