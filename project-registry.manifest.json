@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "alias": "Google_title",
+      "remote": "jd-SearchEngines/Google_title",
+      "pathHints": [
+        "/Users/jingdong/Downloads/Google_title",
+        "/Users/jingdong/Downloads/Google_title_v65"
+      ]
+    },
+    {
+      "alias": "Google_image",
+      "remote": "jd-SearchEngines/Google_image",
+      "pathHints": [
+        "/Users/jingdong/Downloads/Google_image"
+      ]
+    },
+    {
+      "alias": "Google_video",
+      "remote": "jd-SearchEngines/Google_video",
+      "pathHints": [
+        "/Users/jingdong/Downloads/Google_video/Google_video",
+        "/Users/jingdong/Downloads/Google_video"
+      ]
+    },
+    {
+      "alias": "google-ads-strategy-agent-v1",
+      "remote": "jd-SearchEngines/google-ads-strategy-agent-v1",
+      "pathHints": [
+        "/Users/jingdong/Downloads/google agent/ads-agent"
+      ]
+    },
+    {
+      "alias": "ads-creative-intelligence",
+      "remote": "jd-SearchEngines/ads-creative-intelligence",
+      "pathHints": [
+        "/Users/jingdong/Downloads/ads-creative-intelligence"
+      ]
+    },
+    {
+      "alias": "budget-causal-allocation",
+      "remote": "jd-SearchEngines/budget-causal-allocation",
+      "pathHints": []
+    },
+    {
+      "alias": "coding-agent-research",
+      "remote": "jd-SearchEngines/coding-agent-research",
+      "pathHints": []
+    },
+    {
+      "alias": "airi-personal-agent",
+      "remote": "jd-SearchEngines/airi-personal-agent",
+      "pathHints": [
+        "/Users/jingdong/Projects/airi"
+      ]
+    }
+  ]
+}
