@@ -23,6 +23,14 @@ export class Worker {
     if (state?.status === 'RUNNING') {
       console.log(`Recovering task ${state.currentTask} from thread ${state.threadId ?? '(unknown)'}`);
       const issue = await bus.getIssue(state.issueNumber);
+      const terminalLabel = issue.labels.map((label) => label.name).find((label): label is StatusLabel => label === 'codex-done' || label === 'codex-blocked' || label === 'codex-failed');
+      if (terminalLabel) {
+        state.status = terminalLabel.replace('codex-', '').toUpperCase() as RunState['status'];
+        state.updatedAt = new Date().toISOString();
+        await this.store.writeState(state);
+        console.log(`Recovered terminal status ${terminalLabel} for ${state.currentTask}`);
+        return true;
+      }
       await this.execute(bus, issue, state.task, state.repo, true, state.threadId);
       return true;
     }
