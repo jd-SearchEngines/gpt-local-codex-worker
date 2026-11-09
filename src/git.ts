@@ -42,7 +42,7 @@ export async function commitAndPush(repo: RepoConfig, branch: string, message: s
 }
 
 function sameRemote(actual: string, expected: string): boolean {
-  const normalize = (value: string) => value.trim().replace(/^git@github\.com:/, 'https://github.com/').replace(/^ssh:\/\/git@github\.com\//, 'https://github.com/').replace(/^https?:\/\//, '').replace(/\.git$/, '').replace(/\/$/, '').toLowerCase();
+  const normalize = (value: string) => value.trim().replace(/^git@github\.com:/, '').replace(/^ssh:\/\/git@github\.com\//, '').replace(/^https?:\/\/github\.com\//, '').replace(/\.git$/, '').replace(/\/$/, '').toLowerCase();
   return normalize(actual) === normalize(expected);
 }
 
